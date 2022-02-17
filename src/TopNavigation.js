@@ -25,7 +25,7 @@ const darkTheme = createTheme({
   },
 });
 
-const NavigationBar = () => {
+const TopNavigation = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -149,4 +149,4 @@ const NavigationBar = () => {
     </ThemeProvider>
   );
 };
-export default NavigationBar;
+export default TopNavigation;

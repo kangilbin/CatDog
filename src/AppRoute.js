@@ -1,13 +1,14 @@
 import React from "react";
 import App from "./App";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavigationBar from './NavigationBar';
+import TopNavigation from './TopNavigation';
+import BottomNavigation from "./BottomNavigation";
 
 class AppRouter extends React.Component {
     render() {
         return (
             <div>
-                <NavigationBar/>
+                <TopNavigation/>
                 <Router>
                     <div>
                         <Routes>
@@ -15,6 +16,7 @@ class AppRouter extends React.Component {
                         </Routes>
                     </div>
                 </Router>
+                <BottomNavigation /> 
             </div>
         );
     }
