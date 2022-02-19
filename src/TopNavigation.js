@@ -13,14 +13,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['뉴스', '미아', '고객센터'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const darkTheme = createTheme({
+const lightTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#1976d2',
+      main: '#424242',
     },
   },
 });
@@ -43,9 +43,16 @@ const TopNavigation = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const changePage = (e) => {
+    const page = e.target.value;
+    if(page === "main") {
+      window.location.href = "/";
+    }
+    console.log("h2");
+  }
   
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -54,6 +61,8 @@ const TopNavigation = () => {
               noWrap
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+              value="main"
+              onClick={changePage}
             >
               LOGO
             </Typography>
