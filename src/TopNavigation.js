@@ -43,13 +43,7 @@ const TopNavigation = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const changePage = (e) => {
-    const page = e.target.value;
-    if(page === "main") {
-      window.location.href = "/";
-    }
-    console.log("h2");
-  }
+ 
   
   return (
     <ThemeProvider theme={lightTheme}>
@@ -62,7 +56,6 @@ const TopNavigation = () => {
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
               value="main"
-              onClick={changePage}
             >
               LOGO
             </Typography>
