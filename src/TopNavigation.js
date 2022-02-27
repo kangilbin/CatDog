@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const pages = ['뉴스', '미아', '고객센터'];
+const pages = ['뉴스', '미아', '유튜브', '고객센터'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const lightTheme = createTheme({
@@ -36,8 +36,8 @@ const TopNavigation = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseNavMenu = (e) => {
+    window.location.href='/youtube';
   };
 
   const handleCloseUserMenu = () => {
@@ -90,7 +90,7 @@ const TopNavigation = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu} value={page}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
